@@ -44,6 +44,16 @@ After tuning our hyperparameters and training our models, we obtain the followin
  |:-------------:|:-------------:|:-------------:|:-------------:|
  |Test RMSE (ppb) | 12.48  |20.64 |11.70|
 
+We can also visually compare our predictions for the test with ground truth values in the following figure:
+
+<p align="center">
+  <img src="table4.jpg" />
+</p>
+
+## Contributions
+
+All three members of the team contributed to each aspect of the project, but each focused more on different areas. Nicolas focused on gathering and preprocessing the satellite imagery dataset including performing cloud masking as well as image visualization, Nina focused on gathering the street-view imagery dataset and running experiments for hyperparameter tuning, and Andrea focused on gathering and preprocessing ozone emissions data as well as taking the lead on the code for the CNN and NN model definitions and final error analysis. All team members contributed to the literature review, proposal, milestone, and final reports.
+
 ## Code structure
 * The `02_Scripts/` directory comprises the code to scrape and preprocess
 the ozone concentration data, which is sourced from the 
