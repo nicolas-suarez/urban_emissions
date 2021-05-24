@@ -27,9 +27,22 @@ Here we can see some examples from our dataset:
 
 ## Network architecture
 We train the two CNNs separately on the satellite and street-level imagery, both using a ResNet-18 architecture implemented in PyTorch and pretrained on the ImageNet dataset. The models are trained separately as the nature of the features they need to learn to associate with ozone concentration is quite different for each dataset. Transfer learning is used for both CNNs to leverage lower-level features learned on the ImageNet dataset. The ResNet-18 architecture was slightly adapted for our particular task; in the case of the satellite imagery, the CNN's input layer was modified to accommodate for the image's seven channels and was initialized using Kaiming initialization.
+
+After training both CNNs separately to predict the ozone reading for each location, we extract $512$ features for each satellite and each street image. These are concatenated to create a feature vector of size $1,024$ representing the satellite image and a particular street view of a given location. We then train a Concatenated Feedforward Neural Network (NN) using these multiple representations of each location to predict the location's average ozone level in 2020. 
+
 <p align="center">
   <img src="architecture4.PNG" />
 </p>
+
+More details about regularization, the tuning process of hyperparameters and training of the network can be found in the report.
+
+## Results
+After tuning our hyperparameters and training our models, we obtain the following performance (Root Mean Square Error in our test set):
+
+
+ |               | Satellite Model | Street-level Model | Concatenated Model |
+ |:-------------:|:-------------:|:-------------:|:-------------:|
+ |Test RMSE (ppb) | 12.48  |20.64 |11.70|
 
 ## Code structure
 * The `02_Scripts/` directory comprises the code to scrape and preprocess
