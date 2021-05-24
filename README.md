@@ -20,17 +20,16 @@ Our satellite imagery dataset was constructed using the Google Earth Engine API:
 
 The street-level imagery dataset was constructed using the Google Maps Street View API. For each location labeled with an ozone level, we randomly sample 10 geospatial points within $6.72$ km from the measurement point.
 
-![](table1.jpg)
-
-<div style="text-align:center"><img src="table1.jpg" /></div>.
-
+Here we can see some examples from our dataset:
 <p align="center">
   <img src="table1.jpg" />
 </p>
 
 ## Network architecture
- 
-![](architecture4.PNG)
+We train the two CNNs separately on the satellite and street-level imagery, both using a ResNet-18 architecture implemented in PyTorch and pretrained on the ImageNet dataset. The models are trained separately as the nature of the features they need to learn to associate with ozone concentration is quite different for each dataset. Transfer learning is used for both CNNs to leverage lower-level features learned on the ImageNet dataset. The ResNet-18 architecture was slightly adapted for our particular task; in the case of the satellite imagery, the CNN's input layer was modified to accommodate for the image's seven channels and was initialized using Kaiming initialization.
+<p align="center">
+  <img src="architecture4.PNG" />
+</p>
 
 ## Code structure
 * The `02_Scripts/` directory comprises the code to scrape and preprocess
