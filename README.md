@@ -1,4 +1,5 @@
 # Using satellite and street level images to predict urban emissions
+Authors: Nina Prakash, Nicolas Suarez & Andrea Vallebueno
 
 ## Description
 This project examines the relationship between the level of ozone concentration
@@ -9,6 +10,10 @@ geography, and the other trained on street-level imagery ("Street CNN") to learn
 ground-level features such as motor vehicle activity. These features are then 
 concatenated to train neural network ("Concat NN") on this shared representation
  and predict the location's level of ozone as measured in parts per billion. 
+ 
+ ## Network architecture
+ 
+ ![](architecture4.PNG)
 
 ## Code structure
 * The `02_Scripts/` directory comprises the code to scrape and preprocess
