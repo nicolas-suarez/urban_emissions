@@ -20,11 +20,11 @@ Our satellite imagery dataset was constructed using the Google Earth Engine API:
 
 The street-level imagery dataset was constructed using the Google Maps Street View API. For each location labeled with an ozone level, we randomly sample 10 geospatial points within $6.72$ km from the measurement point.
 
-![](table1.jpg)
+![](table1.jpg#center)
 
 ## Network architecture
  
-![](architecture4.PNG)
+![](architecture4.PNG#center)
 
 ## Code structure
 * The `02_Scripts/` directory comprises the code to scrape and preprocess
