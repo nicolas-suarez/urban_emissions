@@ -22,7 +22,12 @@ The street-level imagery dataset was constructed using the Google Maps Street Vi
 
 ![](table1.jpg)
 
-<div style="text-align:center"><img src="table1.jpg" /></div>
+<div style="text-align:center"><img src="table1.jpg" /></div>.
+
+<p align="center">
+  <img src="table1.jpg" />
+</p>
+
 ## Network architecture
  
 ![](architecture4.PNG)
