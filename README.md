@@ -1,5 +1,7 @@
 # Using satellite and street level images to predict urban emissions
-Authors: Nina Prakash, Nicolas Suarez & Andrea Vallebueno
+**Authors: Nina Prakash, Nicolas Suarez & Andrea Vallebueno**
+
+This was our class project for Stanford CS230 "Deep Learning" class during the Winter 2021 quarter. The project was featured as one of the [Outstanding projects for the Winter 2021 quarter](https://cs230.stanford.edu/past-projects/#winter-2021). You can find our final report [here](http://cs230.stanford.edu/projects_winter_2021/reports/70701113.pdf).
 
 ## Description
 This project examines the relationship between the level of ozone concentration
@@ -10,10 +12,19 @@ geography, and the other trained on street-level imagery ("Street CNN") to learn
 ground-level features such as motor vehicle activity. These features are then 
 concatenated to train neural network ("Concat NN") on this shared representation
  and predict the location's level of ozone as measured in parts per billion. 
+
+## Data
+We obtained ozone measurements (parts per billion) for 12,976 semi-unique locations with ozone levels information mostly located in North America from [AirNow](https://www.airnow.gov/).
+
+Our satellite imagery dataset was constructed using the Google Earth Engine API: for each location labeled with an ozone reading, we retrieve one satellite image centered at that location from the Landsat 8 Surface Reflectance Tier 1 Collection with a resolution of 224 $\times$ 224 pixels which represents $6.72$ km $\times$ $6.72$ km.  We use 7 bands from this collection: RGB, ultra blue, near infrared, and two shortwave infrared bands. We preprocess each of our images by adding a cloud mask per pixel and then computing the per pixel and band mean composite of all the available images for the year 2020.
+
+The street-level imagery dataset was constructed using the Google Maps Street View API. For each location labeled with an ozone level, we randomly sample 10 geospatial points within $6.72$ km from the measurement point.
+
+![](table1.jpg)
+
+## Network architecture
  
- ## Network architecture
- 
- ![](architecture4.PNG)
+![](architecture4.PNG)
 
 ## Code structure
 * The `02_Scripts/` directory comprises the code to scrape and preprocess
